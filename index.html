@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Karine Martins — Glow Peach · Harmonização de Glúteos · Balneário Camboriú</title>
+  <meta name="description" content="Especialista em Harmonização de Glúteos Glow Peach, Perfiloplastia e tratamentos estéticos avançados em Balneário Camboriú. +55 69 9283-8271" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --cream:    #F7F1EA;
+      --cream-dk: #EDE4D6;
+      --gold:     #B8935A;
+      --gold-lt:  #D4AF7A;
+      --gold-dk:  #8B6830;
+      --dark:     #1A1410;
+      --mid:      #5C4A36;
+      --white:    #FDFAF6;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Montserrat', sans-serif; background: var(--white); color: var(--dark); overflow-x: hidden; }
+
+    /* ── NAV ──────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 22px 60px;
+      display: flex; align-items: center; justify-content: space-between;
+      transition: background .4s, padding .4s, box-shadow .4s;
+    }
+    nav.scrolled {
+      background: rgba(253,250,246,.96); padding: 14px 60px;
+      box-shadow: 0 1px 0 rgba(184,147,90,.15); backdrop-filter: blur(8px);
+    }
+    .nav-logo { display: flex; align-items: center; text-decoration: none; }
+    .nav-logo-img {
+      height: 80px; width: auto;
+      mix-blend-mode: multiply;
+      transition: opacity .2s;
+    }
+    .nav-logo-img:hover { opacity: .85; }
+    .nav-links { display: flex; gap: 38px; list-style: none; }
+    .nav-links a {
+      font-size: 10.5px; font-weight: 500; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta {
+      font-size: 10.5px; font-weight: 600; letter-spacing: .14em;
+      text-transform: uppercase; color: var(--white); background: var(--gold);
+      padding: 12px 26px; text-decoration: none; transition: background .2s;
+    }
+    .nav-cta:hover { background: var(--gold-dk); }
+
+    /* ── HERO ─────────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr;
+      background: var(--cream); overflow: hidden; position: relative;
+    }
+    .hero-left {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 140px 70px 120px; position: relative; z-index: 2;
+    }
+    .hero-eyebrow {
+      font-size: 10px; font-weight: 600; letter-spacing: .24em;
+      text-transform: uppercase; color: var(--gold);
+      border-left: 2px solid var(--gold); padding-left: 16px;
+      margin-bottom: 36px; display: inline-block;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 5.2vw, 84px); font-weight: 300;
+      line-height: 1.04; color: var(--dark); margin-bottom: 30px;
+    }
+    .hero-title em { font-style: italic; color: var(--gold-dk); }
+    .hero-desc {
+      font-size: 13.5px; font-weight: 300; line-height: 1.9;
+      color: var(--mid); max-width: 400px; margin-bottom: 50px;
+    }
+    .hero-btns { display: flex; align-items: center; gap: 30px; }
+    .btn-solid {
+      font-size: 10.5px; font-weight: 600; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--white); background: var(--gold-dk);
+      padding: 17px 42px; text-decoration: none; transition: background .2s; display: inline-block;
+    }
+    .btn-solid:hover { background: var(--gold); }
+    .btn-line {
+      font-size: 10.5px; font-weight: 500; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--gold-dk); text-decoration: none;
+      border-bottom: 1px solid var(--gold-lt); padding-bottom: 2px;
+      transition: color .2s, border-color .2s;
+    }
+    .btn-line:hover { color: var(--gold); border-color: var(--gold); }
+    .hero-right { position: relative; overflow: hidden; }
+    .hero-right img {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: right center; display: block;
+    }
+    .hero-right::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to right, var(--cream) 0%, transparent 30%);
+    }
+    .hero-stats {
+      position: absolute; bottom: 0; left: 0; right: 0; z-index: 10;
+      display: grid; grid-template-columns: repeat(4,1fr);
+      background: rgba(26,20,16,.88); backdrop-filter: blur(10px);
+    }
+    .stat {
+      padding: 26px 20px; text-align: center;
+      border-right: 1px solid rgba(255,255,255,.07);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 34px; font-weight: 300; color: var(--gold-lt); line-height: 1; margin-bottom: 5px;
+    }
+    .stat-lbl {
+      font-size: 9px; font-weight: 500; letter-spacing: .18em;
+      text-transform: uppercase; color: rgba(255,255,255,.42);
+    }
+
+    /* ── SOBRE ────────────────────────────────────────────── */
+    #sobre { display: grid; grid-template-columns: 1fr 1fr; min-height: 80vh; }
+    .sobre-img { position: relative; overflow: hidden; }
+    .sobre-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      object-position: right center; display: block;
+    }
+    .sobre-badge {
+      position: absolute; bottom: 0; right: 0;
+      background: var(--gold); padding: 28px 32px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 14px; font-style: italic; font-weight: 300;
+      color: var(--white); max-width: 236px; line-height: 1.65;
+    }
+    .sobre-body {
+      background: var(--white); display: flex; flex-direction: column;
+      justify-content: center; padding: 100px 80px;
+    }
+    .eyebrow {
+      font-size: 10px; font-weight: 600; letter-spacing: .22em;
+      text-transform: uppercase; color: var(--gold);
+      border-left: 2px solid var(--gold); padding-left: 14px;
+      margin-bottom: 26px; display: inline-block;
+    }
+    h2.serif {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 3.4vw, 58px); font-weight: 300;
+      line-height: 1.1; color: var(--dark);
+    }
+    h2.serif em { font-style: italic; color: var(--gold-dk); }
+    .body-text {
+      font-size: 13.5px; font-weight: 300; line-height: 1.9; color: var(--mid); margin-top: 22px;
+    }
+    .body-text strong { font-weight: 600; color: var(--dark); }
+    .creds { margin-top: 36px; display: flex; flex-direction: column; gap: 13px; }
+    .cred {
+      display: flex; align-items: flex-start; gap: 14px;
+      font-size: 12px; font-weight: 400; color: var(--mid); line-height: 1.5;
+    }
+    .cred-dot { width: 5px; height: 5px; background: var(--gold); flex-shrink: 0; margin-top: 6px; }
+
+    /* ── PROCEDIMENTOS ────────────────────────────────────── */
+    #procedimentos { background: var(--cream); padding: 120px 70px; }
+    .sec-header {
+      display: flex; align-items: flex-end; justify-content: space-between;
+      margin-bottom: 72px;
+    }
+    .sec-header-note {
+      font-size: 13px; font-weight: 300; line-height: 1.8;
+      color: var(--mid); max-width: 320px;
+    }
+    .cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; }
+    .card { background: var(--white); overflow: hidden; display: flex; flex-direction: column; }
+    .card-img { width: 100%; aspect-ratio: 3/4; overflow: hidden; position: relative; }
+    .card-img img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .7s cubic-bezier(.25,.46,.45,.94);
+    }
+    .card:hover .card-img img { transform: scale(1.05); }
+    .card-body { padding: 34px 34px 42px; flex: 1; display: flex; flex-direction: column; }
+    .card-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 11px; font-weight: 400; letter-spacing: .12em;
+      color: var(--gold-lt); margin-bottom: 12px; display: block;
+    }
+    .card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 30px; font-weight: 400; line-height: 1.15; color: var(--dark); margin-bottom: 6px;
+    }
+    .card-sub {
+      font-size: 10px; font-weight: 600; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 18px; display: block;
+    }
+    .card-desc {
+      font-size: 13px; font-weight: 300; line-height: 1.85; color: var(--mid); flex: 1;
+    }
+    .card-tags { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 7px; }
+    .tag {
+      font-size: 9.5px; font-weight: 500; letter-spacing: .1em;
+      text-transform: uppercase; color: var(--gold-dk);
+      border: 1px solid rgba(184,147,90,.3); padding: 5px 11px;
+    }
+    .card-cta {
+      margin-top: 24px; display: inline-flex; align-items: center; gap: 10px;
+      font-size: 10.5px; font-weight: 600; letter-spacing: .12em;
+      text-transform: uppercase; color: var(--gold-dk); text-decoration: none;
+      transition: gap .25s;
+    }
+    .card-cta::after { content: '→'; font-weight: 300; }
+    .card-cta:hover { gap: 16px; }
+
+    /* ── RESULTADOS (antes/depois) ────────────────────────── */
+    #resultados { background: var(--dark); padding: 100px 70px; }
+    #resultados .eyebrow { color: var(--gold-lt); border-color: var(--gold-lt); }
+    #resultados h2.serif { color: var(--white); margin-bottom: 60px; }
+    .results-grid {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 3px;
+    }
+    .result-item { position: relative; overflow: hidden; }
+    .result-item img {
+      width: 100%; display: block; object-fit: cover;
+      transition: transform .6s;
+    }
+    .result-item:hover img { transform: scale(1.03); }
+    .result-label {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(26,20,16,.75), transparent);
+      padding: 28px 20px 18px;
+      font-size: 10px; font-weight: 600; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--gold-lt);
+    }
+    .results-note {
+      margin-top: 48px; text-align: center;
+      font-size: 11px; font-weight: 300; letter-spacing: .08em;
+      color: rgba(255,255,255,.35);
+    }
+
+    /* ── DIFERENCIAIS ─────────────────────────────────────── */
+    #diferenciais { display: grid; grid-template-columns: 1fr 1fr; min-height: 72vh; }
+    .dif-left { background: var(--cream); padding: 100px 80px; display: flex; flex-direction: column; justify-content: center; }
+    .dif-list { margin-top: 48px; display: flex; flex-direction: column; gap: 32px; }
+    .dif-item { display: flex; gap: 22px; align-items: flex-start; }
+    .dif-icon {
+      width: 42px; height: 42px; flex-shrink: 0;
+      border: 1px solid rgba(184,147,90,.35);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .dif-icon svg { width: 19px; height: 19px; }
+    .dif-text h4 { font-size: 13px; font-weight: 600; letter-spacing: .05em; color: var(--dark); margin-bottom: 5px; }
+    .dif-text p { font-size: 12px; font-weight: 300; line-height: 1.75; color: var(--mid); }
+    .dif-right { position: relative; overflow: hidden; }
+    .dif-right img { width: 100%; height: 100%; object-fit: cover; object-position: right center; }
+    .dif-overlay { position: absolute; inset: 0; background: linear-gradient(to right, var(--cream) 0%, transparent 25%); }
+
+    /* ── AGENDA / CTA ─────────────────────────────────────── */
+    #agenda {
+      background: var(--cream-dk); padding: 100px 70px;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 90px; align-items: center;
+    }
+    .agenda-desc { font-size: 13.5px; font-weight: 300; line-height: 1.9; color: var(--mid); margin: 22px 0 40px; }
+    .contact-list { display: flex; flex-direction: column; gap: 18px; margin-bottom: 40px; }
+    .contact-item {
+      display: flex; align-items: center; gap: 14px;
+      font-size: 13px; font-weight: 400; color: var(--mid);
+    }
+    .contact-item svg { color: var(--gold); flex-shrink: 0; }
+    .btn-wa {
+      display: inline-flex; align-items: center; gap: 13px;
+      font-size: 10.5px; font-weight: 600; letter-spacing: .16em;
+      text-transform: uppercase; color: var(--white);
+      background: var(--gold-dk); padding: 19px 46px;
+      text-decoration: none; transition: background .2s;
+    }
+    .btn-wa:hover { background: var(--gold); }
+    .agenda-img { position: relative; }
+    .agenda-img img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center top; display: block; }
+    .agenda-quote {
+      position: absolute; bottom: 0; left: -36px;
+      background: var(--gold-dk); padding: 30px 34px; max-width: 290px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 15px; font-style: italic; font-weight: 300;
+      line-height: 1.7; color: var(--white);
+    }
+
+    /* ── FOOTER ───────────────────────────────────────────── */
+    footer { background: var(--dark); padding: 56px 70px 38px; }
+    .ft-top {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-bottom: 36px; border-bottom: 1px solid rgba(255,255,255,.07); margin-bottom: 32px;
+    }
+    .ft-name {
+      font-family: 'Cormorant Garamond', serif; font-size: 20px;
+      font-weight: 400; letter-spacing: .04em; color: var(--gold-lt); display: block;
+    }
+    .ft-sub {
+      font-size: 9px; font-weight: 500; letter-spacing: .2em;
+      text-transform: uppercase; color: rgba(255,255,255,.28); display: block; margin-top: 4px;
+    }
+    .ft-links { display: flex; gap: 36px; list-style: none; }
+    .ft-links a {
+      font-size: 10.5px; font-weight: 400; letter-spacing: .1em;
+      text-transform: uppercase; color: rgba(255,255,255,.36);
+      text-decoration: none; transition: color .2s;
+    }
+    .ft-links a:hover { color: var(--gold-lt); }
+    .ft-bot { display: flex; align-items: center; justify-content: space-between; }
+    .ft-copy { font-size: 11px; font-weight: 300; color: rgba(255,255,255,.2); letter-spacing: .04em; }
+    .ft-social { display: flex; gap: 14px; }
+    .ft-social a {
+      width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.1);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.36); text-decoration: none; transition: border-color .2s, color .2s;
+    }
+    .ft-social a:hover { border-color: var(--gold-lt); color: var(--gold-lt); }
+    .ft-social svg { width: 13px; height: 13px; }
+
+    /* ── WA FLOAT ─────────────────────────────────────────── */
+    .wa {
+      position: fixed; bottom: 34px; right: 34px; z-index: 200;
+      width: 54px; height: 54px; background: #25D366; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; box-shadow: 0 4px 24px rgba(37,211,102,.38);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .wa:hover { transform: scale(1.1); box-shadow: 0 6px 32px rgba(37,211,102,.5); }
+    .wa svg { width: 26px; height: 26px; fill: white; }
+
+    /* ── RESPONSIVE ───────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      nav { padding: 18px 28px; }
+      nav.scrolled { padding: 13px 28px; }
+      .nav-links, .nav-cta { display: none; }
+      #hero { grid-template-columns: 1fr; }
+      .hero-left { padding: 110px 28px 60px; }
+      .hero-right { height: 65vw; }
+      .hero-stats { position: static; }
+      #sobre { grid-template-columns: 1fr; }
+      .sobre-img { height: 70vw; }
+      .sobre-body { padding: 56px 28px; }
+      #procedimentos { padding: 72px 28px; }
+      .sec-header { flex-direction: column; align-items: flex-start; gap: 18px; margin-bottom: 44px; }
+      .cards { grid-template-columns: 1fr; }
+      .card-img { aspect-ratio: 16/9; }
+      #resultados { padding: 72px 28px; }
+      .results-grid { grid-template-columns: 1fr; }
+      #diferenciais { grid-template-columns: 1fr; }
+      .dif-left { padding: 64px 28px; }
+      .dif-right { height: 60vw; }
+      #agenda { grid-template-columns: 1fr; gap: 44px; padding: 72px 28px; }
+      .agenda-quote { left: 0; position: static; margin-top: -4px; }
+      footer { padding: 44px 28px 30px; }
+      .ft-top { flex-direction: column; align-items: flex-start; gap: 24px; }
+      .ft-links { flex-wrap: wrap; gap: 18px; }
+      .ft-bot { flex-direction: column; gap: 14px; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <img src="fotos/logo.png" alt="Dra. Karine Martins" class="nav-logo-img" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="#sobre">A Doutora</a></li>
+    <li><a href="#procedimentos">Procedimentos</a></li>
+    <li><a href="#resultados">Resultados</a></li>
+    <li><a href="#agenda">Agendamento</a></li>
+  </ul>
+  <a href="https://wa.me/5569928382271" target="_blank" class="nav-cta">Agendar Consulta</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <span class="hero-eyebrow">Harmonização de Glúteos · Balneário Camboriú</span>
+    <h1 class="hero-title">
+      A silhueta que<br>
+      você <em>merece</em><br>
+      ter.
+    </h1>
+    <p class="hero-desc">
+      Resultados naturais e duradouros com a técnica exclusiva Glow Peach. Especialista em harmonização corporal e facial em Balneário Camboriú.
+    </p>
+    <div class="hero-btns">
+      <a href="https://wa.me/5569928382271?text=Olá+Dra.+Karine,+gostaria+de+agendar+uma+avaliação" target="_blank" class="btn-solid">Agendar Agora</a>
+      <a href="#procedimentos" class="btn-line">Ver Procedimentos</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="fotos/gluteos-perfeito-banner.png" alt="Glow Peach — Harmonização de Glúteos" />
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">+2.000</div><div class="stat-lbl">Procedimentos realizados</div></div>
+    <div class="stat"><div class="stat-num">8 anos</div><div class="stat-lbl">De especialização</div></div>
+    <div class="stat"><div class="stat-num">4.9</div><div class="stat-lbl">Avaliação no Google</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">Minimamente invasivo</div></div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section id="sobre">
+  <div class="sobre-img">
+    <img src="fotos/pdrn-banner.png" alt="Dra. Karine Martins — Estética Avançada" style="object-position: center top; transform: scale(1.7); transform-origin: center top;" />
+    <div class="sobre-badge">
+      "Beleza com segurança e ciência. Cada resultado é único."
+    </div>
+  </div>
+  <div class="sobre-body">
+    <span class="eyebrow">A Doutora</span>
+    <h2 class="serif">Dra. Karine<br><em>Martins</em></h2>
+    <p class="body-text">
+      Médica especialista em estética avançada e harmonização corporal, com foco na técnica exclusiva <strong>Glow Peach</strong> para harmonização de glúteos. Referência em Balneário Camboriú para quem busca resultados naturais e seguros.
+    </p>
+    <p class="body-text">
+      Sua abordagem combina <strong>medicina baseada em evidências</strong> com visão artística apurada — respeitando a proporção e individualidade de cada paciente, sem exageros.
+    </p>
+    <div class="creds">
+      <div class="cred"><div class="cred-dot"></div>Medicina Estética avançada com foco em harmonização corporal</div>
+      <div class="cred"><div class="cred-dot"></div>Especialista certificada em Harmonização de Glúteos — Glow Peach</div>
+      <div class="cred"><div class="cred-dot"></div>Formação em Perfiloplastia e rejuvenescimento facial</div>
+      <div class="cred"><div class="cred-dot"></div>Protocolo PDRN — revitalização celular com DNA do salmão</div>
+      <div class="cred"><div class="cred-dot"></div>Atendimento em Balneário Camboriú, SC — +55 69 9283-8271</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCEDIMENTOS -->
+<section id="procedimentos">
+  <div class="sec-header">
+    <div>
+      <span class="eyebrow">Procedimentos</span>
+      <h2 class="serif">O que fazemos<br><em>por você</em></h2>
+    </div>
+    <p class="sec-header-note">
+      Cada procedimento é realizado com protocolos de segurança rigorosos, produtos certificados e técnicas de última geração.
+    </p>
+  </div>
+  <div class="cards">
+
+    <!-- GLOW PEACH -->
+    <div class="card">
+      <div class="card-img">
+        <img src="fotos/gluteos-beneficios.png" alt="Glow Peach — Harmonização de Glúteos" style="object-position: right center;" />
+      </div>
+      <div class="card-body">
+        <span class="card-num">01</span>
+        <h3 class="card-title">Glow Peach</h3>
+        <span class="card-sub">Harmonização de Glúteos</span>
+        <p class="card-desc">Técnica exclusiva para modelagem, levantamento e volumização dos glúteos com resultados naturais. Trata flacidez, hip dips, projeção e celulite. Minimamente invasiva, sem cirurgia, recuperação rápida.</p>
+        <div class="card-tags">
+          <span class="tag">Sem cirurgia</span>
+          <span class="tag">Resultado imediato</span>
+          <span class="tag">Hip Dips</span>
+          <span class="tag">Firmeza</span>
+        </div>
+        <a href="https://wa.me/5569928382271?text=Quero+saber+mais+sobre+o+Glow+Peach" target="_blank" class="card-cta">Saber mais</a>
+      </div>
+    </div>
+
+    <!-- PERFILOPLASTIA -->
+    <div class="card">
+      <div class="card-img">
+        <img src="fotos/perfiloplastia-procedimento.png" alt="Perfiloplastia — Harmonização Facial" style="object-position: right top;" />
+      </div>
+      <div class="card-body">
+        <span class="card-num">02</span>
+        <h3 class="card-title">Perfiloplastia</h3>
+        <span class="card-sub">Harmonização Facial</span>
+        <p class="card-desc">Um conjunto de procedimentos que equilibra nariz, queixo e mandíbula para um perfil mais elegante e harmonioso. Resultados naturais, sem cirurgia, com preenchimentos precisos.</p>
+        <div class="card-tags">
+          <span class="tag">Não invasivo</span>
+          <span class="tag">Contorno facial</span>
+          <span class="tag">Natural</span>
+        </div>
+        <a href="https://wa.me/5569928382271?text=Quero+saber+sobre+Perfiloplastia" target="_blank" class="card-cta">Saber mais</a>
+      </div>
+    </div>
+
+    <!-- LA VIEEN -->
+    <div class="card">
+      <div class="card-img">
+        <img src="fotos/lavieen-banner.png" alt="La Vieen — Tratamento de Pele" style="object-position: right center;" />
+      </div>
+      <div class="card-body">
+        <span class="card-num">03</span>
+        <h3 class="card-title">La Vieen</h3>
+        <span class="card-sub">Tratamento de Pele Avançado</span>
+        <p class="card-desc">Protocolo exclusivo para todos os tipos de pele. Trata manchas, melasma, rugas finas, poros abertos, cicatrizes de acne e uniformiza o tom com eficácia clínica comprovada.</p>
+        <div class="card-tags">
+          <span class="tag">Manchas</span>
+          <span class="tag">Melasma</span>
+          <span class="tag">Rejuvenescimento</span>
+          <span class="tag">Poros</span>
+        </div>
+        <a href="https://wa.me/5569928382271?text=Quero+saber+sobre+La+Vieen" target="_blank" class="card-cta">Saber mais</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESULTADOS REAIS -->
+<section id="resultados">
+  <span class="eyebrow">Resultados Reais</span>
+  <h2 class="serif" style="margin-top:0">Transformações<br><em>comprovadas</em></h2>
+  <div class="results-grid">
+    <div class="result-item">
+      <img src="fotos/antes-depois-perfil-lateral2.png" alt="Perfiloplastia — Antes e Depois" style="object-position: center 30%;" />
+      <div class="result-label">Perfiloplastia — Antes e Depois</div>
+    </div>
+    <div class="result-item">
+      <img src="fotos/antes-depois-perfil-lateral.png" alt="Perfiloplastia — Perfil" style="object-position: center top;" />
+      <div class="result-label">Perfiloplastia — Perfil</div>
+    </div>
+    <div class="result-item">
+      <img src="fotos/antes-depois-facial-frontal.png" alt="Harmonização Facial — Antes e Depois" style="object-position: center top;" />
+      <div class="result-label">Harmonização Facial — Antes e Depois</div>
+    </div>
+  </div>
+  <p class="results-note">Resultados reais de pacientes da Dra. Karine Martins. Cada caso é individual e os resultados podem variar.</p>
+</section>
+
+<!-- DIFERENCIAIS -->
+<section id="diferenciais">
+  <div class="dif-left">
+    <span class="eyebrow">Por que nos escolher</span>
+    <h2 class="serif">O padrão<br><em>Karine Martins</em></h2>
+    <div class="dif-list">
+      <div class="dif-item">
+        <div class="dif-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#B8935A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <div class="dif-text">
+          <h4>Segurança Clínica</h4>
+          <p>Todos os procedimentos seguem protocolos médicos rigorosos com materiais certificados e rastreáveis.</p>
+        </div>
+      </div>
+      <div class="dif-item">
+        <div class="dif-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#B8935A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+          </svg>
+        </div>
+        <div class="dif-text">
+          <h4>Recuperação Rápida</h4>
+          <p>Técnicas minimamente invasivas que permitem retorno às atividades em poucas horas.</p>
+        </div>
+      </div>
+      <div class="dif-item">
+        <div class="dif-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#B8935A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <div class="dif-text">
+          <h4>Resultados Naturais</h4>
+          <p>Harmonização que respeita sua anatomia. A melhor versão de você — sem exageros.</p>
+        </div>
+      </div>
+      <div class="dif-item">
+        <div class="dif-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#B8935A" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </div>
+        <div class="dif-text">
+          <h4>Atendimento Exclusivo</h4>
+          <p>Consulta personalizada com análise individual e plano de tratamento sob medida para seus objetivos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="dif-right">
+    <img src="fotos/hero-perfiloplastia.png" alt="Dra. Karine Martins — Perfiloplastia" />
+    <div class="dif-overlay"></div>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section id="agenda">
+  <div class="agenda-left">
+    <span class="eyebrow">Agendamento</span>
+    <h2 class="serif">Seu primeiro<br>passo começa<br><em>aqui.</em></h2>
+    <p class="agenda-desc">
+      Agende sua avaliação e descubra o tratamento ideal para o seu perfil. Consulta presencial em Balneário Camboriú — atendimento personalizado com a Dra. Karine.
+    </p>
+    <div class="contact-list">
+      <div class="contact-item">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.18 6.18l1.79-1.79a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +55 69 9283-8271
+      </div>
+      <div class="contact-item">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Balneário Camboriú, Santa Catarina
+      </div>
+      <div class="contact-item">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        @karinemartinsclinic
+      </div>
+    </div>
+    <a href="https://wa.me/5569928382271?text=Olá+Dra.+Karine,+gostaria+de+agendar+uma+avaliação" target="_blank" class="btn-wa">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Agendar pelo WhatsApp
+    </a>
+  </div>
+  <div class="agenda-img">
+    <img src="fotos/lavieen-banner.png" alt="Tratamento de pele avançado" style="object-position: right center;" />
+    <div class="agenda-quote">
+      "Meu compromisso é entregar resultados que você ama e se sente segura para exibir."
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <span class="ft-name">Dra. Karine Martins</span>
+      <span class="ft-sub">Glow Peach — Harmonização de Glúteos — Balneário Camboriú</span>
+    </div>
+    <ul class="ft-links">
+      <li><a href="#sobre">A Doutora</a></li>
+      <li><a href="#procedimentos">Procedimentos</a></li>
+      <li><a href="#resultados">Resultados</a></li>
+      <li><a href="#agenda">Contato</a></li>
+    </ul>
+  </div>
+  <div class="ft-bot">
+    <p class="ft-copy">© 2024 Dra. Karine Martins. Todos os direitos reservados. CRM-SC.</p>
+    <div class="ft-social">
+      <a href="https://www.instagram.com/karinemartinsclinic/" target="_blank" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      </a>
+      <a href="https://wa.me/5569928382271" target="_blank" aria-label="WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </a>
+      <a href="https://www.google.com/maps/place/Dra+Karine+Martins+Harmoniza%C3%A7%C3%A3o+de+Gl%C3%BAteos+em+Balne%C3%A1rio+Cambori%C3%BA" target="_blank" aria-label="Google Maps">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/5569928382271?text=Olá+Dra.+Karine,+quero+agendar+uma+avaliação" target="_blank" class="wa" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.card, .dif-item, .cred, .result-item').forEach(el => {
+    el.style.cssText += 'opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease';
+    obs.observe(el);
+  });
+</script>
+
+</body>
+</html>
